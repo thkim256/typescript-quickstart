@@ -7,6 +7,7 @@
   # tsconfig.json
   tsc --init
   #+END_SRC
+
 * ch03 변수 선언과 기본 타입
 ** 상수 선언
    #+BEGIN_SRC typescript
@@ -31,6 +32,7 @@
    #+RESULTS:
    : 9
    : { name: 'b', month: 8 }
+
 ** 자바스크립트 형태의 변수 선언과 동적 타이핑
    #+BEGIN_SRC typescript
    var width = 10;
@@ -53,6 +55,7 @@
    : string
    : object object
    : area:  100
+
 ** 변수를 선언할 때 타입 지정
    #+BEGIN_SRC typescript
    var width2 : number = 10;
@@ -62,6 +65,7 @@
 
    #+RESULTS:
    : area:  100
+
 ** symbol 타입
    symbol 타입은 ES6에서 추가된 특징으로서의 객체 속성의 유일하고 불변적인
    식별자로 사용
@@ -97,6 +101,7 @@
    #+RESULTS:
    : 1234
    : { [Symbol()]: 1234 }
+
 ** enum을 선언하는 방법
    #+BEGIN_SRC typescript :cmdline -t es6
    enum WeekDay { Mon, Tue, Wed, Thu = Tue + Wed }
@@ -136,6 +141,7 @@
    #+RESULTS:
    : banana
    : 1
+
 ** 타입에 따른 속성에 접근할 수 있는지를 확인
    #+BEGIN_SRC typescript :cmdline -t es6
    let n = 50;
@@ -156,6 +162,7 @@
    : number
    : number 50.0
    : string h
+
 ** 제네릭 배열
    #+BEGIN_SRC typescript :cmdline -t es6
    let arr: string[] = ["a", "b", "c"];
@@ -167,6 +174,7 @@
    #+RESULTS:
    : [ 'a', 'b', 'c' ]
    : [ 'a', 'b', 'c' ]
+
 ** 튜플(tuple) 타입
    #+BEGIN_SRC typescript :cmdline -t es6
    let x: [string, number] = ["tuple", 100];
@@ -178,6 +186,7 @@
    #+RESULTS:
    : object string number
    : tu 100.00
+
 * ch04 제어문
 ** if문의 조건으로 사용될 수 있는 불리언 타입과 숫자 타입
    #+BEGIN_SRC typescript :cmdline -t es6
@@ -195,6 +204,7 @@
 
    #+RESULTS:
    : 2
+
 ** switch
    #+BEGIN_SRC shell :results value drawer
    # switch break check ignored
@@ -215,6 +225,7 @@
 
    #+RESULTS:
    : hi
+
 ** es6 for-of
    #+BEGIN_SRC typescript :cmdline -t es6
    for (let v of "hi") {
@@ -232,6 +243,7 @@
    : 1
    : 2
    : 3
+
 ** map
 *** es6 map
     #+BEGIN_SRC typescript :cmdline -t es6
@@ -247,8 +259,9 @@
     #+RESULTS:
     : [ 'one', 3 ]
     : 3
+
 *** es5 map
-    #+BEGIN_SRC typescript :cmdline -t es6 
+    #+BEGIN_SRC typescript :cmdline -t es6
     let map: { [key: string]: number; } = {};
     map["one"] = 1;
     map["one"] = 2;
@@ -263,8 +276,9 @@
     #+RESULTS:
     : one
     : 3
+
 ** set
-   #+BEGIN_SRC typescript :cmdline -t es6 
+   #+BEGIN_SRC typescript :cmdline -t es6
    let set = new Set([1, 2, 1, 3, 4, 2]);
 
    for (let v of set) {
@@ -277,8 +291,9 @@
    : 2
    : 3
    : 4
+
 ** [Symbol.iterator]()의 선언과 사용법
-   #+BEGIN_SRC typescript :cmdline -t es6 
+   #+BEGIN_SRC typescript :cmdline -t es6
    let arr =[1,2];
    let itObj = arr[Symbol.iterator]();
 
